@@ -103,13 +103,14 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <CartList features={this.props.features} />
 
         <main className="main">
+          {/* FeaturesList component */}
           <form className="main__form">
             <h2>Customize your laptop</h2>
             {features}
           </form>
+          {/* CartList component */}
           <section className="main__summary">
             <h2>Your cart</h2>
             {summary}
