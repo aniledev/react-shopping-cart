@@ -108,6 +108,9 @@ export default class App extends Component {
           <FeaturesList
             features={this.props.features}
             selected={this.state.selected}
+            handleUpdate={(feature, newValue) =>
+              this.updateFeature(feature, newValue)
+            }
           />
           {/* CartList component */}
           <section className="main__summary">
