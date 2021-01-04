@@ -5,11 +5,6 @@ export default class FeatureItems extends Component {
   render() {
     const { selected } = this.props;
 
-    const USCurrencyFormat = new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-    });
-
     const featuresItems = Object.keys(this.props.features).map(
       (feature, idx) => {
         const featureHash = feature + "-" + idx;
@@ -26,7 +21,7 @@ export default class FeatureItems extends Component {
                 onChange={(e) => this.props.handleUpdate(feature, item)}
               />
               <label htmlFor={itemHash} className="feature__label">
-                {item.name} ({USCurrencyFormat.format(item.cost)})
+                {item.name} ({this.props.USCurrencyFormat.format(item.cost)})
               </label>
             </div>
           );

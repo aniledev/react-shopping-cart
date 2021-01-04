@@ -9,8 +9,14 @@ export default class CartList extends Component {
     return (
       <section className="CartList">
         <h2>Your cart</h2>
-        <CartItems selected={selected} />
-        <Total selected={selected} />
+        <CartItems
+          USCurrencyFormat={this.props.USCurrencyFormat}
+          selected={selected}
+        />
+        <Total
+          USCurrencyFormat={this.props.USCurrencyFormat}
+          selected={selected}
+        />
       </section>
     );
   }

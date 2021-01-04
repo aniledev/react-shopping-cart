@@ -4,11 +4,6 @@ export default class CartItems extends Component {
   render() {
     const { selected } = this.props;
 
-    const USCurrencyFormat = new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-    });
-
     const summary = Object.keys(selected).map((feature, idx) => {
       const featureHash = feature + "-" + idx;
       const selectedOption = selected[feature];
@@ -18,7 +13,7 @@ export default class CartItems extends Component {
           <div className="summary__option__label">{feature} </div>
           <div className="summary__option__value">{selectedOption.name}</div>
           <div className="summary__option__cost">
-            {USCurrencyFormat.format(selectedOption.cost)}
+            {this.props.USCurrencyFormat.format(selectedOption.cost)}
           </div>
         </div>
       );

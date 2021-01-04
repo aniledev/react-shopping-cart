@@ -43,12 +43,18 @@ export default class App extends Component {
   };
 
   render() {
+    const USCurrencyFormat = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+
     return (
       <div className="App">
         <Header />
 
         <main className="main">
           <FeaturesList
+            USCurrencyFormat={USCurrencyFormat}
             features={this.props.features}
             selected={this.state.selected}
             handleUpdate={(feature, newValue) =>
@@ -56,6 +62,7 @@ export default class App extends Component {
             }
           />
           <CartList
+            USCurrencyFormat={USCurrencyFormat}
             features={this.props.features}
             selected={this.state.selected}
           />
