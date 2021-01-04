@@ -3,7 +3,7 @@ import slugify from "slugify";
 
 export default class FeatureItems extends Component {
   render() {
-    const { selected, features } = this.props;
+    const { selected } = this.props;
 
     const USCurrencyFormat = new Intl.NumberFormat("en-US", {
       style: "currency",
