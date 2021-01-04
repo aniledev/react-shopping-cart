@@ -1,5 +1,6 @@
 {
-  "name": "laptop-customizer",
+  "homepage": "https://aniledev.github.io/react-shopping-cart",
+  "name": "laptop-customizer-shopping-cart",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +10,8 @@
     "slugify": "^1.3.4"
   },
   "scripts": {
+    "predeploy": "npm run bulid",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
