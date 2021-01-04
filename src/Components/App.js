@@ -10,7 +10,7 @@ import CartList from "./CartList";
 // This object will allow us to
 // easily convert numbers into US dollar values
 
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -105,11 +105,10 @@ class App extends Component {
         <Header />
 
         <main className="main">
-          {/* FeaturesList component */}
-          <form className="main__form">
-            <h2>Customize your laptop</h2>
-            {features}
-          </form>
+          <FeaturesList
+            features={this.props.features}
+            selected={this.state.selected}
+          />
           {/* CartList component */}
           <section className="main__summary">
             <h2>Your cart</h2>
@@ -126,5 +125,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

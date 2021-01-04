@@ -1,8 +1,10 @@
 import CartItem from "./CartItem";
 import Total from "./Total";
 
-import React from "react";
+import React, { Component } from "react";
 
-export default function CartList() {
-  return <div className="CartList"></div>;
+export default class CartList extends Component {
+  render() {
+    return <div className="CartList"></div>;
+  }
 }
