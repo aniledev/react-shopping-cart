@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-
+import slugify from "slugify";
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
-import slugify from "slugify";
 import "../Styles/App.css";
 import Header from "./Header";
 import FeaturesList from "./FeaturesList";
@@ -10,32 +9,31 @@ import CartList from "./CartList";
 
 // This object will allow us to
 // easily convert numbers into US dollar values
-const USCurrencyFormat = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-});
 
 class App extends Component {
-  state = {
-    selected: {
-      Processor: {
-        name: "17th Generation Intel Core HB (7 Core with donut spare)",
-        cost: 700,
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: {
+        Processor: {
+          name: "17th Generation Intel Core HB (7 Core with donut spare)",
+          cost: 700,
+        },
+        "Operating System": {
+          name: "Ubuntu Linux 16.04",
+          cost: 200,
+        },
+        "Video Card": {
+          name: "Toyota Corolla 1.5v",
+          cost: 1150.98,
+        },
+        Display: {
+          name: '15.6" UHD (3840 x 2160) 60Hz Bright Lights and Knobs',
+          cost: 1500,
+        },
       },
-      "Operating System": {
-        name: "Ubuntu Linux 16.04",
-        cost: 200,
-      },
-      "Video Card": {
-        name: "Toyota Corolla 1.5v",
-        cost: 1150.98,
-      },
-      Display: {
-        name: '15.6" UHD (3840 x 2160) 60Hz Bright Lights and Knobs',
-        cost: 1500,
-      },
-    },
-  };
+    };
+  }
 
   updateFeature = (feature, newValue) => {
     const selected = Object.assign({}, this.state.selected);
@@ -46,6 +44,11 @@ class App extends Component {
   };
 
   render() {
+    const USCurrencyFormat = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+
     const features = Object.keys(this.props.features).map((feature, idx) => {
       const featureHash = feature + "-" + idx;
       const options = this.props.features[feature].map((item) => {
@@ -100,8 +103,13 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <CartList features={this.props.features} />
 
         <main className="main">
+          <form className="main__form">
+            <h2>Customize your laptop</h2>
+            {features}
+          </form>
           <section className="main__summary">
             <h2>Your cart</h2>
             {summary}
@@ -112,7 +120,7 @@ class App extends Component {
               </div>
             </div>
           </section>
-        </mainc>
+        </main>
       </div>
     );
   }
