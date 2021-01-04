@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import CartItems from "./CartItems";
-import Total from "./Total";
 
-export default class CartList extends Component {
+export default class CartItems extends Component {
   render() {
     const { selected } = this.props;
 
@@ -26,16 +24,6 @@ export default class CartList extends Component {
       );
     });
 
-    return (
-      <section className="CartList">
-        <h2>Your cart</h2>
-        <CartItems selected={selected} />
-        <Total selected={selected} />
-      </section>
-    );
+    return <div className="CartItems">{summary}</div>;
   }
 }
-
-CartList.defaultProps = {
-  features: {},
-};
