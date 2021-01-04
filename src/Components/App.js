@@ -99,14 +99,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header>
-          <h1>ELF Computing | Laptops</h1>
-        </header>
-        <main>
-          <form className="main__form">
-            <h2>Customize your laptop</h2>
-            {features}
-          </form>
+        <Header />
+
+        <main className="main">
           <section className="main__summary">
             <h2>Your cart</h2>
             {summary}
@@ -117,7 +112,7 @@ class App extends Component {
               </div>
             </div>
           </section>
-        </main>
+        </mainc>
       </div>
     );
   }
