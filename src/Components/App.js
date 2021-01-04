@@ -92,7 +92,10 @@ export default class App extends Component {
               this.updateFeature(feature, newValue)
             }
           />
-          <CartList selected={this.state.selected} />
+          <CartList
+            features={this.props.features}
+            selected={this.state.selected}
+          />
         </main>
       </div>
     );

@@ -30,7 +30,7 @@ export default class CartList extends Component {
         <h2>Your cart</h2>
         {/* CartItems component*/}
         {summary}
-        <Total selected={this.selected} />
+        <Total selected={selected} />
       </section>
     );
   }

@@ -14,8 +14,10 @@ export default class Total extends Component {
       0
     );
 
+    console.log(selected);
+
     return (
-      <div className="Tota">
+      <div className="Total">
         <div className="summary__total__label">Total</div>
         <div className="summary__total__value">
           {USCurrencyFormat.format(total)}
