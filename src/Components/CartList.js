@@ -1,7 +1,5 @@
-import CartItem from "./CartItem";
-import Total from "./Total";
-
 import React, { Component } from "react";
+import Total from "./Total";
 
 export default class CartList extends Component {
   render() {
@@ -27,21 +25,12 @@ export default class CartList extends Component {
       );
     });
 
-    const total = Object.keys(selected).reduce(
-      (acc, curr) => acc + selected[curr].cost,
-      0
-    );
-
     return (
       <section className="CartList">
         <h2>Your cart</h2>
+        {/* CartItems component*/}
         {summary}
-        <div className="summary__total">
-          <div className="summary__total__label">Total</div>
-          <div className="summary__total__value">
-            {USCurrencyFormat.format(total)}
-          </div>
-        </div>
+        <Total selected={this.selected} />
       </section>
     );
   }
