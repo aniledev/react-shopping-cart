@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-// Normalizes string as a slug - a string that is safe to use
-// in both URLs and html attributes
 import "../Styles/App.css";
 import Header from "./Header";
 import FeaturesList from "./FeaturesList";

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import slugify from "slugify";
+import Item from "./Item";
 
 // class .feature_item into its own component
 export default class FeatureItems extends Component {
@@ -9,22 +10,15 @@ export default class FeatureItems extends Component {
     const featuresItems = Object.keys(features).map((feature, idx) => {
       const featureHash = feature + "-" + idx;
       const options = features[feature].map((item) => {
-        const itemHash = slugify(JSON.stringify(item));
         return (
           // refractor .feature__item into its own component
-          <div key={itemHash} className="feature__item">
-            <input
-              type="radio"
-              id={itemHash}
-              className="feature__option"
-              name={slugify(feature)}
-              checked={item.name === selected[feature].name}
-              onChange={(e) => handleUpdate(feature, item)}
-            />
-            <label htmlFor={itemHash} className="feature__label">
-              {item.name} ({USCurrencyFormat.format(item.cost)})
-            </label>
-          </div>
+          <Item
+            selected={this.props.selected}
+            feature={feature}
+            item={item}
+            USCurrencyFormat={USCurrencyFormat}
+            handleUpdate={handleUpdate}
+          />
         );
       });
 
