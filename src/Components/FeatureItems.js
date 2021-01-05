@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import slugify from "slugify";
 
+// class .feature_item into its own component
 export default class FeatureItems extends Component {
   render() {
     const { selected, features, USCurrencyFormat, handleUpdate } = this.props;
@@ -10,7 +11,7 @@ export default class FeatureItems extends Component {
       const options = features[feature].map((item) => {
         const itemHash = slugify(JSON.stringify(item));
         return (
-          {/* .feature_item needs to be broken out into a new component itself */}
+          // refractor .feature__item into its own component
           <div key={itemHash} className="feature__item">
             <input
               type="radio"
