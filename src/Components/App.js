@@ -3,6 +3,7 @@ import "../Styles/App.css";
 import Header from "./Header";
 import FeaturesList from "./FeaturesList";
 import CartList from "./CartList";
+import FEATURES from "./Features";
 
 export default class App extends Component {
   constructor(props) {
@@ -50,7 +51,7 @@ export default class App extends Component {
         <main className="main">
           <FeaturesList
             USCurrencyFormat={USCurrencyFormat}
-            features={this.props.features}
+            features={FEATURES}
             selected={this.state.selected}
             handleUpdate={(feature, newValue) =>
               this.updateFeature(feature, newValue)

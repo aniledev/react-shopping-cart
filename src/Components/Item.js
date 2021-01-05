@@ -5,7 +5,6 @@ export default class Item extends Component {
   render() {
     const {
       selected,
-      features,
       feature,
       item,
       USCurrencyFormat,
@@ -34,5 +33,6 @@ export default class Item extends Component {
   }
 }
 
-// pass data from App to FeaturesList to FeaturesItem to Item
-// make sure that it renders properly
+Item.defaultProps = {
+  selected: {},
+};
