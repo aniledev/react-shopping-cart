@@ -10,6 +10,7 @@ export default class FeatureItems extends Component {
       const options = features[feature].map((item) => {
         const itemHash = slugify(JSON.stringify(item));
         return (
+          {/* .feature_item needs to be broken out into a new component itself */}
           <div key={itemHash} className="feature__item">
             <input
               type="radio"

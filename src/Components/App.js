@@ -6,9 +6,6 @@ import Header from "./Header";
 import FeaturesList from "./FeaturesList";
 import CartList from "./CartList";
 
-// This object will allow us to
-// easily convert numbers into US dollar values
-
 export default class App extends Component {
   constructor(props) {
     super(props);

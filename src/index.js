@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./Styles/index.css";
 import App from "./Components/App";
 
+// The FEATURES should be in a separate file and imported into the App.js or FeatureList.js
 const FEATURES = {
   Processor: [
     {
